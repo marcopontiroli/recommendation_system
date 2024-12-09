@@ -12,8 +12,6 @@ Make sure you have the following installed on your system:
 Clone this repository to your local machine:
 
 git clone https://github.com/marcopontiroli/recommendation_system.git
-cd recommendation_system
-
 
 ### Build and Run the Application
 Build and start the application along with the MySQL database:
@@ -22,7 +20,7 @@ docker-compose up --build
 
 
 ### Access the Application
-- **Spring Boot Application**: Available at `http://localhost:8080`
+- **Spring Boot Application**: Available at `http://localhost:8080/recommendationsystem`
 - **MySQL Database**:
   - Host: `localhost`
   - Port: `3307`
@@ -33,12 +31,12 @@ docker-compose up --build
 ### Check Application Health
 You can verify that the application is running by accessing:
 
-http://localhost:8080/actuator/health
+http://localhost:8080/recommendationsystem/actuator/health
 
 ### Swagger
 You can read APIs descriptions and send requests with swagger by accessing:
 
-http://localhost:8080/swagger-ui/index.html
+http://localhost:8080/recommendationsystem/swagger-ui/index.html
 
 ### ER Diagram
 
