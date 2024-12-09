@@ -68,4 +68,25 @@ public class MovieAPI {
         log.info("Received request for movie recommendations for user: {}", userId);
         return movieService.getAllRecommendMoviesForUser(userId);
     }
+
+    /**
+     * Searches for movies based on a search term.
+     * Matches words in title, or exact genres, case insensitive. If you want to
+     * search for multiple
+     * terms, separate them by space.
+     * 
+     * @param searchTerm the term to search for. Multiple terms can be separated by
+     *                   space. Genres are an exact match, title is a partial match.
+     *                   This param is case insensitive.
+     * @return a list of movies matching the search term
+     */
+    @Operation(summary = "Search for movies", description = "Searches for movies based on a search term. Matches words in title, or exact genres. "
+            + "If you want to search for multiple terms, separate them by space. Genres are an exact match, title is a partial match.")
+    @GetMapping("/search/{searchTerm}")
+    public List<MovieDTO> searchMovies(
+            @Parameter(description = "The term to search for. If you want to search for multiple terms, separate them by space. Genres are an exact match, title is a partial match. This param is case insensitive", required = true) @PathVariable(required = true) String searchTerm) {
+
+        log.info("Received search request for term: {}", searchTerm);
+        return movieService.searchMovies(searchTerm);
+    }
 }

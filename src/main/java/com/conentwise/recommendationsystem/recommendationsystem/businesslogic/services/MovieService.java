@@ -79,4 +79,23 @@ public class MovieService {
 
         return result;
     }
+
+
+    /**
+     * Searches for movies based on a search term. The search is performed on both
+     * the movie titles and the names of the genres associated with the movies.
+     * 
+     * @param searchTerm the term to search for in movie titles and genre names
+     * @return a list of movies matching the search term
+     */
+    public List<MovieDTO> searchMovies(String searchTerm) {
+
+        List<Movie> moviesThatMatchesSearch = movieRepositoryExtended.searchMovies(searchTerm);
+
+        List<MovieDTO> result = moviesThatMatchesSearch.stream()
+                .map(movie -> modelMapper.map(movie, MovieDTO.class))
+                .collect(Collectors.toList());
+
+        return result;
+    }
 }
