@@ -11,8 +11,8 @@ Make sure you have the following installed on your system:
 ### Clone the Repository
 Clone this repository to your local machine:
 
-git clone <repository-url>
-cd <repository-name>
+git clone https://github.com/marcopontiroli/recommendation_system.git
+cd recommendation_system
 
 
 ### Build and Run the Application
